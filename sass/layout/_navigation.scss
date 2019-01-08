@@ -1,0 +1,162 @@
+.navigation{
+
+    &__checkbox{
+        // this should be hidden
+        display: none;
+    }
+
+    &__button{
+        background-color: $color-white;
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top:6rem;
+        right: 6rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__background{
+        // the background is hidden behind the button and scles up when checked
+        height: 6rem;
+        border-radius: 100%;
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem;
+        width: 6rem;
+                        // radial gradient is circular while linear gradient is from one side to another
+        background-image: radial-gradient($color-primary-light, $color-primary-dark);
+        // this only works on elements that have there position defined
+        z-index: 1000;
+                                // transition-timing-function use easings.net to get the right t-t-f
+        transition: transform .2s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    &__nav{
+        // don't use height:100vh and width:100vw it will cause extra scrolling
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 1500;
+        list-style: none;
+        text-align: center;
+        // opacity reduces the opacity but it isn't absent from the page
+        opacity: 0;
+        width: 0;
+        // you'll notice the lists moved from left in, that's because the we set it at position left:0 
+        transition: all .2s cubic-bezier(0.86, 0, 0.07, 1);
+
+        // visibility: hidden makes the element disappear form the page
+        
+    }
+
+    &__list{
+        @include centerElement;
+    }
+
+    &__item{
+        margin:1rem;
+        list-style: none;
+    }
+
+    &__link{
+        &:link,
+        &:visited{
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 300;
+            padding: .5rem 2rem;
+            color: $color-white;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+            // first set the background-size so it will go outside the element 200% makes the background-position to be 0% so as background-size inreases to 200% the background-position reduces to 0%
+            background-size: 228%;
+            transition: background-position .4s;
+
+            span{
+                margin-right: .5rem;
+            }
+        }
+
+        &:hover,
+        &:active{
+            // then on hover it sets the position back to 100% of the element
+            background-position: 100%;
+            color: $color-primary;
+            transform: translateX(1rem);
+        }   
+    }
+
+    // FUNCTIONALITY
+                      // this selects all the siblings. + selects the adjacent (directly below) sibling
+    &__checkbox:checked ~ &__background{
+        transform: scale(60);
+    }
+
+    &__checkbox:checked ~ &__nav{
+        width: 100%;
+        opacity: 1;
+    }
+
+    // ICON
+     &__icon {
+        position: relative;
+        margin-top: 3.4rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-dark-grey-3;
+            display: inline-block;
+        }
+        // we use 1 and -1 on the before and after bacause the are relative to the span elemnt on the page
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before{
+            top:-.8rem;
+        }
+
+        &::after{
+            // transform-origin: right; this also specifies where the origin should start at i.e you can specify x and y and 5 corners to get the exact origin. Reference my article on sololearn.com.
+            // NOTE: if you don;t specify the origin the rotation will start at the center  
+            top: .8rem;
+        }
+    }
+    
+    // you  can select like this because the icon is a child elemwnt of the button
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon  {
+        // we do this because if you set the display to none or opavity:0 it will alter the position of the before and adter as they are relative to the button
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        transform: rotate(135deg);
+        top: 0;
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+}

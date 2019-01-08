@@ -1,0 +1,36 @@
+//abstracts (files that do not output any css)
+@import 'abstract/functions';
+@import 'abstract/mixins';
+@import 'abstract/variables';
+
+//base (basic components are stored here)
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+
+//components (this is for saving web components that can be reused later)
+@import 'components/button';
+@import 'components/composition';
+@import 'components/feature-box';
+@import 'components/cards';
+@import 'components/story';
+@import 'components/bg-video';
+@import 'components/form';
+@import 'components/popup';
+
+// layout this is where the layout of the page goes
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/navigation';
+
+//pages (this is different css for different web pages)
+@import 'pages/home';
+
+
+
+
+
+
+

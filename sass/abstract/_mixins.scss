@@ -1,0 +1,71 @@
+@mixin clearFix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin skewSection {
+    transform: skewY(-7deg);
+
+    // > * selects all the child elements
+    &>* {
+        // always use the exact opposite degree to compensate for the skewed design
+        transform: skewY(7deg)
+    }
+}
+
+@mixin centerElement {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+
+/*
+    0 to 600px - phone
+    600 to 900px - Tablet portrait
+    900 to 1200px - Tablet Landscape
+    1200 to 1800px - Desktop [ this is where our normal styles apply]
+    1800+ - Big desktop
+
+$breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big -desktop
+*/
+
+// 1em is 16px em is preered for writing media-queries
+
+// use 'only screen (hover:none)' to check if device is a touch device you can also set to (hover:hover)
+
+@mixin respond($breakpoint) {
+    // just like js "if is used in sass for conditional statements
+    @if ($breakpoint == phone) {
+        @media only screen and (max-width: 37.5em) { @content }; // 600px
+        
+    }
+
+    @if ($breakpoint == tab-port) {
+        @media only screen and (max-width: 56.25em) { @content }; // 900px
+        
+    }
+    
+    // this translates to at max-width 1200px what ever content is passed to it will apply
+    @if ($breakpoint == tab-land) {
+        @media only screen and (max-width: 75em) {   // 1200px
+            @content 
+        };
+    }
+
+    @if ($breakpoint == big-desktop) {
+        @media only screen and (min-width: 112.5em  ) { @content }; // 1800px
+    }
+
+
+}
+

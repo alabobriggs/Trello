@@ -1,0 +1,23 @@
+.bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    // width: 100%;
+    z-index: -1;
+    opacity: .15;
+    // overflow: hidden;
+
+    // I used this because the kew coming from the sectiion-stories is makg it 7 deg so I have to skew it back
+    &>* {
+        transform: skewY(-7deg);
+    }
+
+    &__content{
+        height: 100%;
+        width: 100%;
+        // object-fit:cover will make the video fill the entire width fo the parent element (in this case the video covers the element while still maintaining the aspect ratio
+                    // i'll use fill here so i can skew it
+        object-fit: fill;
+    }
+}

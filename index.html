@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+                            <!-- this tells the browser to add the view width based on the width of the device if it is not specifie it will render based on the largest element ont he screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"> -->
+
+    <link type='text/css' rel="stylesheet" href="css/icon-font.css">
+    <link rel="stylesheet" type='text/css' href="css/style.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+    <title>Alabo | Changing the world little by little</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <!-- to create the navigation first great a checkbox and lik to the label , then hide the ckackboz and link the naviation tab to the button -->
+                                                                <!-- always give an id so it will be connected to the table -->
+        <input type="checkbox" class="navigation__checkbox" id = "navi-toggle">
+               <!-- for="navi-toggle" is what links it to the navigation input -->
+        <label for="navi-toggle" class="navigation__button"> 
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">
+            &nbsp;
+        </div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="" class="navigation__link"><span>01</span> About</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link"> <span>02</span> Contact me</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link"><span>03</span>  Popular tours</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link"> <span>04</span> Stories</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link"><span>05</span>  Book now</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header class="header">
+        <div class='header__logo-box'>
+            <img src='./img/logo-white.png' alt='logo' class='header__logo' />
+        </div>
+        <div class="header__text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary--main"> Alabo </span>
+                <span class="heading-primary--sub"> Changing the world little by little </span>
+            </h1>
+            <a href="#" class="btn btn--white btn--animated">Discover Projects</a>
+        </div>
+
+    </header>
+    <!-- main is an html5 tag that tells search engine where the main aprt of your website is -->
+    <main>
+        <section class="section-about">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">
+                    About
+                </h2>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-2">
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        Lorem ipsum dolor sit amet consectetur
+                    </h3>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum exercitationem est autem possimus neque velit dicta, doloremque mollitia, quasi id veniam sed dignissimos? Ipsa odio repudiandae ut enim, ab atque.
+                    </p>
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        Cupiditate veniam quod perspiciatis incidunt, corporis
+                    </h3>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate veniam quod perspiciatis incidunt, corporis.
+                    </p>
+                    <!--  html special code for arrow is &rarr -->
+                    <a href="" class="btn-text">Learn more &rarr;</a>
+                </div>
+                <div class="col-1-of-2">
+                    <div class="composition">
+                        <!-- resolution switching lets the browser choose which is the best image to download based on the resolution -->
+                        <!-- adding a width to the images informs the browser of the width of the images i.e 300w and 1000w in this case-->
+                        <!-- sizes informs the browser of the width we want the image to be from there it will then select the right width -->
+                        <!-- remember to add src incase the user is using an older browser -->
+                        <img  srcset="img/nat-1-large.jpg 1000w, img/nat-1.jpg 300w" sizes ="(max-width: 56.25em) 20vw , (max-width: 37.5em) 30vw, 300px" alt="photo 1" class="composition__photo composition__photo--p1" src="img/nat-1-large.jpg">
+                                                                <!-- 300px is the size of the image if none of the conditions apply -->
+                        <img srcset="img/nat-2-large.jpg 1000w, img/nat-2.jpg 300w" sizes="(max-width: 56.25em) 20vw , (max-width: 37.5em) 30vw, 300px"
+                            alt="photo 2" class="composition__photo composition__photo--p2" src="img/nat-2-large.jpg">
+
+                        <img srcset="img/nat-3-large.jpg 1000w, img/nat-3.jpg 300w" sizes="(max-width: 56.25em) 20vw , (max-width: 37.5em) 30vw, 300px"
+                            alt="photo 3" class="composition__photo composition__photo--p3" src="img/nat-3-large.jpg">
+
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-features">
+            <div class="row">
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-world"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">UI/UX Designer</h3>
+                        <div class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, voluptatem? Minus similique distinctio mollitia.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-compass"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Web Developer</h3>
+                        <div class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, voluptatem? Minus similique distinctio mollitia.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-map"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Ethical Hacker</h3>
+                        <div class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, voluptatem? Minus similique distinctio mollitia.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-heart"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Business Developer</h3>
+                        <div class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, voluptatem? Minus similique distinctio mollitia.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-tours" id="section-tours">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">
+                    Hire me
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <div class="card__side card__side-front">
+                            <!-- in BEM do not next child element that is never do card__side__picture, it makes sense but don't do -->
+                            <div class="card__picture card__picture--1">
+                                &nbsp;
+                            </div>
+                            <!-- semantic in html means you should use the right tag for the right element -->
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--1">
+                                    UI/UX Projects
+                                </span>
+                            </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>Responsive designs</li>
+                                    <li>Work with front-end</li>
+                                    <li>User centric design</li>
+                                    <li>Modern designs</li>
+                                    <li>Product design</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card__side card__side-back card__side-back--1">
+                            <!-- call to action -->
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price--only">
+                                        only
+                                    </p>
+                                    <p class="card__price--value">
+                                        $1599
+                                    </p>
+                                </div> 
+                                <a href="#popup" class="btn btn--white">book now </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <div class="card__side card__side-front">
+                            <!-- in BEM do not next child element that is never do card__side__picture, it makes sense but don't do -->
+                            <div class="card__picture card__picture--2">
+                                &nbsp;
+                            </div>
+                            <!-- semantic in html means you should use the right tag for the right element -->
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--2">
+                                    Web Projects
+                                </span>
+                            </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>Secure coding</li>
+                                    <li>Web development</li>
+                                    <li>Free hosting</li>
+                                    <li>Penetration testing</li>
+                                    <li>Product marketing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card__side card__side-back card__side-back--2">
+                            <!-- call to action -->
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price--only">
+                                        above
+                                    </p>
+                                    <p class="card__price--value">
+                                        $368
+                                    </p>
+                                </div> 
+                                <a href="#popup" class="btn btn--white">book now </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <div class="card__side card__side-front">
+                            <!-- in BEM do not next child element that is never do card__side__picture, it makes sense but don't do -->
+                            <div class="card__picture card__picture--3">
+                                &nbsp;
+                            </div>
+                            <!-- semantic in html means you should use the right tag for the right element -->
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--3">
+                                    Mobile Projects
+                                </span>
+                            </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>Cross platform</li>
+                                    <li>Low cost</li>
+                                    <li>Hybrid</li>
+                                    <li>PWA</li>
+                                    <li>Product marketing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card__side card__side-back card__side-back--3">
+                            <!-- call to action -->
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price--only">
+                                        above
+                                    </p>
+                                    <p class="card__price--value">
+                                        $150
+                                    </p>
+                                </div> 
+                                <a href="#popup" class="btn btn--white">book now </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="u-center-text u-margin-top-huge">
+               <a href="#" class="btn btn--green">discover all tours   </a>
+            </div>
+        </section>
+        <section class="section-stories">
+            <div class="bg-video">
+                <video class="bg-video__content" autoplay muted loop>
+                    <!-- in html ther is a src tag that allows for embedding of elements into the homepage 
+                     -->
+                     <!-- videos from coverr.co -->
+                     <!-- two formats are specified to make sure it works accross all browsers -->
+                    <source src='img/video.mp4' type='video/mp4' >   
+                    <source src='img/video.webm' type="video/webm">
+                    <!-- the text is a fallback if your browser isn't supported -->
+                    Your browser is not supported!
+                </video>
+            </div>
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">
+                    hear what clients have to say
+                </h2>
+            </div>
+            <div class="row">
+                <div class="story">
+                    <!-- figure helps add an image with a caption -->
+                    <figure class="story__shape">
+                        <img class='story__img' src="img/nat-8.jpg" alt="Satisfied client">
+                        <!--  figcaption is a special html elemwnt for adding captions -->
+                        <figcaption class="story__caption">
+                            Benee
+                        </figcaption>
+                    </figure>
+                    <div class="story__text">
+                        <div class="heading-tertiary u-margin-bottom-small">
+                            I had the fatest delivery ever
+                        </div>
+                        <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum exercitationem est autem possimus neque velit dicta, doloremque mollitia, quasi id veniam sed dignissimos? Ipsa odio repudiandae ut enim, ab atque.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="story">
+                    <!-- figure helps add an image with a caption -->
+                    <figure class="story__shape">
+                        <img class='story__img' src="img/nat-9.jpg" alt="Satisfied client">
+                        <!--  figcaption is a special html elemwnt for adding captions -->
+                        <figcaption class="story__caption">
+                            Magnus abe
+                        </figcaption>
+                    </figure>
+                    <div class="story__text">
+                        <div class="heading-tertiary u-margin-bottom-small">
+                            He is truly a sure marchant for IT projects
+                        </div>
+                        <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum exercitationem est autem possimus neque velit dicta, doloremque mollitia, quasi id veniam sed dignissimos? Ipsa odio repudiandae ut enim, ab atque.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="u-center-text u-margin-top-huge">
+               <a href="#" class=" btn-text">Read more comments &rarr;</a>
+            </div>
+        </section>
+        <section class="section-book">
+            <div class="row">
+                <div class="book">
+                    <div class="book__form">
+                        <form action="#" class="form">
+                            <div class=" u-margin-bottom-medium">
+                                <h2 class="heading-secondary">
+                                    Contact me
+                                </h2>
+                            </div>
+                            <div class="form__group">
+                                <input autocomplete="off" type="text" class="form__input" placeholder="Full Name" id="name" required>
+                                <!-- use for and add the inout id name to focus the form when the id is click -->
+                                <label for="name" class="form__label">Full Name</label>
+                            </div>
+                            <div class="form__group">
+                                <input autocomplete="off" type="email" class="form__input" placeholder="Email Address" id="email" required>
+                                <label for="email" class="form__label">Email Address</label>
+                            </div>
+                            <!-- the utility class here will not work so you use important on u-classes so it will override the classes -->
+                            <div class="form__group .u-margin-bottom-medium">
+                                <!-- in other for html to -->
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id='small' name='size'>
+                                    <label for="small" class="form__radio-label">
+                                        <!-- this pan is here so that it will appear asif it is click where-as it is the button that is clicked and the button is hidden -->
+                                        <span class="form__radio-button"></span>
+                                        Small tour group
+                                    </label>
+                                </div>
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id='large' name='size'>
+                                    <label for="large" class="form__radio-label">
+                                        <span class="form__radio-button"></span>
+                                        Large tour group
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <button class="btn btn--green">
+                                    Next step &rarr;
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <!-- art direction is chnaging the image totally on a different screen width in html5 you use picture to do that 
+            the media in the source forces the browser to use the srcset in the source -->
+            <picture class="footer__logo">
+                <!-- mobile -->
+                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-1x.png 2x" media="(max-width: 37.5em)" >
+
+                <!-- desktop -->
+
+                <!-- use srcset to set 2 images and the density for it to be showed at the end of the image  if the screen density is 1x use the first image if 2x use the second-->
+                <!-- this is density switching in html5 -->
+                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="footer logo" class="footer__logo">
+            </picture>
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="footer__navigation">
+                    <ul class="footer__list">
+                        <li class="footer__item"> <a href="#" class="footer__link"> Company </a> </li>
+                        <li class="footer__item"> <a href="#" class="footer__link"> Contact us </a> </li>
+                        <li class="footer__item"> <a href="#" class="footer__link"> Careers </a> </li>
+                        <li class="footer__item"> <a href="#" class="footer__link"> privacy policy </a> </li>
+                        <li class="footer__item"> <a href="#" class="footer__link"> terms </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1-of-2">
+                <p class="footer__copyright">
+                    Built by <a href="#" class="footer__link">Alabo Briggs</a> for my portfolio <a href="#" class="footer__link">alabobriggs@gmail.com</a>. Copyright &copy; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur numquam omnis amet corporis, quibusdam tempore! Impedit qui enim.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- this can work by setting the initial opacity to hidden then animate the :target pseudo class to 1 when it is click on -->
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="img/nat-8.jpg" alt="tour photo" class="popup__img">
+                <img src="img/nat-9.jpg" alt="tour photo" class="popup__img">
+            </div>
+            <div class="popup__right">
+                <a href="#section-tours" class="popup__close">&times;</a>                
+                <h2 class="heading-secondary u-margin-bottom-small">Start Contacting Now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-small">important &ndash; Lorem ipsum dolor sit amet consectetur.</h3>
+                <p class="popup__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur reprehenderit neque alias tenetur atque corrupti, fugit laborum vero dolorum magnam voluptate quam corporis iste laudantium non aperiam dolorem accusantium explicabo! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis impedit magnam laudantium aperiam sint quis earum libero atque saepe repudiandae accusamus laborum, quam cum odit odio eius ipsum officia qui!
+                </p>
+                <a href="#" class="btn btn--green">book now</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

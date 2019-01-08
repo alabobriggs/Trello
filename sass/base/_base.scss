@@ -1,0 +1,56 @@
+// this is a partial for the basics that is html, body and global with other files as well
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+    //never use backface-visisbility on global elements as it will cause blur
+    // backface-visibility: hidden;
+
+}
+
+html {
+    // this defines what one rem is. which is in our case 10/16 which is 62.5%
+    font-size: 62.5%;
+
+                    // this passes in the breakpoint then it will apply the font-size 50%
+    
+    @include respond(tab-land){ 
+        font-size: 56.25%;
+    }
+    // in media query if a max width or length is specified it gets applied to the entire element below, so if you want the smaller one to apply put it last so the smaller with will apply next
+    @include respond(tab-port){
+        font-size: 50%;
+    }
+
+    // @include respond(phone) {
+    //     // the above calls respong phone and passes the arguments below as the content
+    //     // the percentages are gotten below by dividing 10 by 16
+    //     font-size: 30%;
+    // }
+
+
+    // this comes last because it used min-width which means thta when the width is 1800 or greater it will apply
+    @include respond(big-desktop){
+        font-size: 75%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+     @include respond(tab-port) {
+        padding: 0;
+     }
+}
+
+
+// CHANGE WHAT SELECTED FILES LOOK LIKE
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
